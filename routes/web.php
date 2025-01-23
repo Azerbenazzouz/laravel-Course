@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\ShowCarController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -14,6 +15,8 @@ Route::get('/about', function (){
 Route::view('/azer', 'about');
 
 
-Route::controller(CarController::class)->group(function (){
-    Route::get("/car",'index');
-});
+//Route::controller(CarController::class)->group(function (){
+//    Route::get("/car",'index');
+//});
+
+Route::get('/car',CarController::class);
