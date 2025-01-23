@@ -20,6 +20,9 @@ Route::controller(CarController::class)->group(function (){
 });
 
 
-Route::resource('/products', ProductController::class)
-    ->only(['index','show']) // Set the methods the controller should apply to.
-    ->except(['destroy']); // Set the methods the controller should exclude.
+//Route::resource('/products', ProductController::class)
+//    ->only(['index','show']) // Set the methods the controller should apply to.
+//    ->except(['destroy']); // Set the methods the controller should exclude.
+
+
+Route::apiResource('/products', ProductController::class);
