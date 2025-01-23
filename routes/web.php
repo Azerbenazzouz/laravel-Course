@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CarApiContrller;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
@@ -25,4 +26,11 @@ Route::controller(CarController::class)->group(function (){
 //    ->except(['destroy']); // Set the methods the controller should exclude.
 
 
-Route::apiResource('/products', ProductController::class);
+//Route::apiResource('/products', ProductController::class);
+//
+//Route::apiResource('cars',CarApiContrller::class);
+
+Route::apiResources([
+    'cars' => CarApiContrller::class,
+    'products' => ProductController::class
+]);
