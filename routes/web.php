@@ -1,8 +1,6 @@
 <?php
 
-use App\Http\Controllers\CarApiContrller;
-use App\Http\Controllers\CarController;
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\MathController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -14,3 +12,9 @@ Route::get('/about', function (){
 });
 
 Route::view('/azer', 'about');
+
+
+Route::get('/sum/{a}/{b}',[MathController::class,'sum'])
+    ->whereNumber(['a','b']);
+Route::get('/subtract/{a}/{b}',[MathController::class,'subtract'])
+    ->whereNumber(['a','b']);
